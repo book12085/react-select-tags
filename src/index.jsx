@@ -119,7 +119,7 @@ export default class ReactSelectTags extends React.Component {
     // Add input to values list, if valid
     if(this.validateTag(input)) {
       this.setState({ invalid: false });
-      this.addTag(input);
+      // this.addTag(input);
     } else {
       this.setState({ invalid: true });
     }
@@ -141,6 +141,8 @@ export default class ReactSelectTags extends React.Component {
       if(this.props.onInputChange) {
         this.props.onInputChange(value, this.getTags());
       }
+      console.log('value ->', value)
+      this.setState({ filter: value})
     }
   }
 

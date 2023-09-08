@@ -63,17 +63,17 @@ const OptionComponent = (props) => {
 const initialSettings = {
   options: [
     {label: "Green", value: "#66B132"},
-    {label: "Blue-green", value: "#3E92CE", group: "Group 1"},
-    {label: "Blue", value: "#3C47FE", group: "Group 1"},
-    {label: "Blue-violet", value: "#3E02A4", group: "Group 1"},
+    {label: "Blue-green", value: "#3E92CE"},
+    {label: "Blue", value: "#3C47FE"},
+    {label: "Blue-violet", value: "#3E02A4"},
     {label: "Violet", value: "#8601AF"},
-    {label: "Red-violet", value: "#A7194B", group: "Group 2"},
-    {label: "Red", value: "#F12815", group: "Group 2"},
-    {label: "Red-orange", value: "#F2530B", group: "Group 2"},
+    {label: "Red-violet", value: "#A7194B"},
+    {label: "Red", value: "#F12815"},
+    {label: "Red-orange", value: "#F2530B"},
     {label: "Orange", value: "#F49906"},
-    {label: "Yellow-orange", value: "#F6BC02", group: "Group 3"},
-    {label: "Yellow", value: "#FAFE33", group: "Group 3"},
-    {label: "Yellow-green", value: "#D0EA2B", group: "Group 3"},
+    {label: "Yellow-orange", value: "#F6BC02"},
+    {label: "Yellow", value: "#FAFE33"},
+    {label: "Yellow-green", value: "#D0EA2B"},
 
     (searchPattern) => {
       return new Promise((resolve, reject) => {

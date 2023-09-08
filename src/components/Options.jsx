@@ -23,6 +23,7 @@ export class Options extends React.Component {
 
   componentDidMount() {
     this._isMounted = true;
+    // this.setState({ filter: root.state.filter });
     this.loadAsyncOptions(this.state.filter);
   }
 
@@ -77,9 +78,7 @@ export class Options extends React.Component {
     let opts = options.filter(opt => typeof opt != "function").concat(asyncOptions);
 
     // Filter the options by the searchPattern (if any)
-    if(this.state.filter) {
-      opts = this.props.filter(opts, this.state.filter);
-    }
+    opts = this.props.filter(opts, root.state.filter);
 
     // Remove the options that are already selected
     const selectedValues = tags.map(tag => tag.value);
@@ -90,18 +89,6 @@ export class Options extends React.Component {
 
     return (
       <div className={classSelectors.optionsWrapper}>
-
-        <div className={classSelectors.filter}>
-          <input
-            placeholder="Search..."
-            value={this.state.filter}
-            onChange={(e) => {
-              this.setState({ filter: e.target.value });
-              this.loadAsyncOptions(e.target.value);
-            }}
-          />
-        </div>
-
         <NotificatorComponent
           loading={loading}
           options={opts}
